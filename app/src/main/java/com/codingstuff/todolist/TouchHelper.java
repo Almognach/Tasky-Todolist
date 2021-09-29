@@ -19,7 +19,7 @@ public class TouchHelper extends ItemTouchHelper.SimpleCallback {
     private ToDoAdapter adapter;
 
     public TouchHelper(ToDoAdapter adapter) {
-        super(0 , ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT);
+        super(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT);
         this.adapter = adapter;
     }
 
@@ -31,25 +31,14 @@ public class TouchHelper extends ItemTouchHelper.SimpleCallback {
     @Override
     public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
         final int position = viewHolder.getAdapterPosition();
-        if (direction == ItemTouchHelper.RIGHT){
+        if (direction == ItemTouchHelper.RIGHT) {
             AlertDialog.Builder builder = new AlertDialog.Builder(adapter.getContext());
             builder.setMessage("Are You Sure?")
                     .setTitle("Delete Task")
-                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            adapter.deleteTask(position);
-                        }
-                    }).setNegativeButton("No", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    adapter.notifyItemChanged(position);
-                }
-            });
-
+                    .setPositiveButton("Yes", (dialog, which) -> adapter.deleteTask(position)).setNegativeButton("No", (dialog, which) -> adapter.notifyItemChanged(position));
             AlertDialog dialog = builder.create();
             dialog.show();
-        }else{
+        } else {
             adapter.editTask(position);
         }
     }
@@ -60,7 +49,7 @@ public class TouchHelper extends ItemTouchHelper.SimpleCallback {
                 .addSwipeRightActionIcon(R.drawable.ic_baseline_delete_24)
                 .addSwipeRightBackgroundColor(Color.RED)
                 .addSwipeLeftActionIcon(R.drawable.ic_baseline_edit_24)
-                .addSwipeLeftBackgroundColor(ContextCompat.getColor(adapter.getContext() , R.color.green_blue))
+                .addSwipeLeftBackgroundColor(ContextCompat.getColor(adapter.getContext(), R.color.green_blue))
                 .create()
                 .decorate();
         super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);

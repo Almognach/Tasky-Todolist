@@ -7,40 +7,11 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <RelativeLayout
-        android:id="@+id/profileRel"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:gravity="center">
-
-
-        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/profile_image"
-            android:layout_width="96dp"
-            android:layout_height="96dp"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/add_profile_icon"
-
-            />
-
-        <TextView
-            android:id="@+id/header_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/profile_image"
-            android:layout_centerHorizontal="true"
-            android:text="Hello User"
-            android:textSize="20dp"
-            android:textStyle="bold" />
-
-
-    </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycerlview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/profileRel" />
+        android:layout_height="match_parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton"
