@@ -1,8 +1,8 @@
 **Welcome to Tasky App -Todolist.**
 
--Can add and manage your tasks.
- -Register/Login to personal tasks.
--Can share the tasks with other users.
+-Can add and manage your tasks. /n
+ -Register/Login to personal tasks. /n
+-Can share the tasks with other users. /n
 
 Preview App: 
 https://www.youtube.com/embed/MRxWXdn56ck
