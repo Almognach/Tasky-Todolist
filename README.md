@@ -1,10 +1,14 @@
 **Welcome to Tasky App -Todolist.**
 
--Can add and manage your tasks.
+* Can add and manage your tasks.
 
--Register/Login to personal tasks.
+* Register/Login to personal tasks.
 
--Can share the tasks with other users. 
+* Add Picture Profile.
+
+* Can share the tasks with other users. 
+
+(With Firebase Database)
 
 
 Preview App: 
